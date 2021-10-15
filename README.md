@@ -16,3 +16,9 @@ Un{1,2}=L_means; %n_fields x1
 Un{1,3}=L_per_x; %zeros
 Un{1,4}=L_per_y; %zeros
 Un{1,5}=fields_means; %n_fields x1
+
+
+
+`physical.m`: remove change to take away log conversions for IP
+
+All fileds must be positive. For IP field, keep it that way and add negative sign in `write_R2_sigma.m`
