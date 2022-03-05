@@ -26,4 +26,5 @@ All fileds must be positive. For IP field, keep it that way and add negative sig
 
 ## Troubleshoot
 - solution converge immediately: most likely data used for synthetic generation is used for inversion. Check whether you are using `protocol.dat` or `cR2_forward.dat` in the `get_R2_data()` lines in `EKI.m`
-- Solution not updating and/or only 1 sigma_mean value (instead of 2 or 3). May be a mismatch in parameter dimension. Duouble check `R2_forward.dat`. Make sure domain is not cropped in template R2 forward run.
+- Solution not updating and/or only 1 sigma_mean value (instead of 2 or 3). Double in `cR2.in`, `num_region=0` and file path is `resistivity.dat`. Otherwise your updated field is not wirtten!
+- Duouble check `forward_model.dat`. Make sure domain is not cropped in template R2 forward run.
