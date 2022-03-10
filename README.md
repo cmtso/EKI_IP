@@ -1,21 +1,21 @@
 # EKI_IP
-extending EKI_geophysics_2020 to induced polarization
+extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) to induced polarization. Prepared for paper submission.
 
 
 # Major difference from the DC resistivity version:
 -
 
 
-EKI put everything in log so thatit's positive, maybe should add negative sign to phase angle later.
+EKI put everything in log so that it's positive, maybe should add negative sign to phase angle later.
 
 
-U size ofo R2 grid
+U size of R2 grid
 
-Un{1,1}=RN; %size(EKI_grid) x 1
-Un{1,2}=L_means; %n_fields x1
-Un{1,3}=L_per_x; %zeros
-Un{1,4}=L_per_y; %zeros
-Un{1,5}=fields_means; %n_fields x1
+- Un{1,1}=RN; %size(EKI_grid) x 1
+- Un{1,2}=L_means; %n_fields x1
+- Un{1,3}=L_per_x; %zeros
+- Un{1,4}=L_per_y; %zeros
+- Un{1,5}=fields_means; %n_fields x1
 
 
 
@@ -25,6 +25,6 @@ All fileds must be positive. For IP field, keep it that way and add negative sig
 
 
 ## Troubleshoot
-- solution converge immediately: most likely data used for synthetic generation is used for inversion. Check whether you are using `protocol.dat` or `cR2_forward.dat` in the `get_R2_data()` lines in `EKI.m`
+- solution converge immediately: most likely data used for synthetic generation is used for inversion. Check whether you are using `protocol.dat` (field data) or `cR2_forward.dat` (synthetic data) in the `get_R2_data()` lines in `EKI.m`
 - Solution not updating and/or only 1 sigma_mean value (instead of 2 or 3). Double in `cR2.in`, `num_region=0` and file path is `resistivity.dat`. Otherwise your updated field is not wirtten!
 - Duouble check `forward_model.dat`. Make sure domain is not cropped in template R2 forward run.
