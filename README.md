@@ -18,7 +18,7 @@ EKI put everything in log so that it's positive, maybe should add negative sign 
 U size of R2 grid
 
 - Un{1,1}=RN; %size(EKI_grid) x 1
-- Un{1,2}=L_means; %n_fields x1
+- Un{1,2}=L_means; %n_fields x1, `tempo = Un{1,2}` by the end of `Inversion.m`
 - Un{1,3}=L_per_x; %zeros
 - Un{1,4}=L_per_y; %zeros
 - Un{1,5}=fields_means; %n_fields x1
