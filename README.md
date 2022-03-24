@@ -1,6 +1,12 @@
 # EKI_IP
 extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) to induced polarization. Prepared for paper submission.
 
+# Use case
+- `Surf_IP2`: surface synthetic example with 1/2 inclusions
+- `Pow`: Pow catchment surface example (from Mejus thesis 2014)
+- `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
+
+
 
 # Major difference from the DC resistivity version:
 -
