@@ -1,18 +1,28 @@
 # EKI_IP
 extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) to induced polarization. Prepared for paper submission.
 
+In particular, we use the above approach first for DC resistivity, then fixed the mean DC resistivity and invert for phase angles only.
+
+# Getting started
+Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the subfolders.
+
+You can find each of the subfolders as a use case.
+
 # Use case
 - `Surf_IP2`: surface synthetic example with 1/2 inclusions
 - `Pow`: Pow catchment surface example (from Mejus thesis 2014)
 - `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
 
+# Creating your own use cases
+Follow these steps:
+1. Make sure you can run the problem in cR2 as forward problem (put it in `inv/fwd`). ResIPy is a python package that you may find useful
+2. Copy the folder to the <root subfolder>. Copy minimal input files to <root subfolder>/template
+3. Double check lines in `EKI.m` that it is reading the right data files. Add noise if needed.
+4. Change prior ranges in `Set_Prior*.m`
 
 
 # Major difference from the DC resistivity version:
 -
-
-
-EKI put everything in log so that it's positive, maybe should add negative sign to phase angle later.
 
 
 U size of R2 grid
@@ -27,7 +37,7 @@ U size of R2 grid
 
 `physical.m`: remove change to take away log conversions for IP
 
-All fileds must be positive. For IP field, keep it that way and add negative sign in `write_R2_sigma.m`
+For DC resisitvity, the values are log-transformed. For IP field, we are working with negative phase angles, so we add negative sign in `write_R2_sigma.m`
 
 
 ## Troubleshoot
