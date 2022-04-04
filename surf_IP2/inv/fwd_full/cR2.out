@@ -1,0 +1,33 @@
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 17 - 02 - 2022
+
+ >> My beautiful survey                                                             
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:   140  Measurements rejected:    0
+
+
+     Timing Summary
+     ==============
+     Total time taken:                                  5. s
+
+     Percent time taken forming element equations:     0.2 %
+     Percent time taken solving forward  equations:   54.9 %
+     Percent time taken forming Jacobian:              0.0 %
+     Percent time taken solving inverse equations:     0.0 %
+
+     Timing Details
+     ==============
+     Number of calls to form element equations:         10
+     Average time taken in call:                     0.001 s
+     Number of calls to solve forward equations:       240
+     Average time taken in call:                     0.010 s
+     Number of calls to form Jacobian:                   0
+     Average time taken in call:                     0.000 s
+     Number of calls to solve inverse equations:         0
+     Average time taken in call:                     0.000 s
