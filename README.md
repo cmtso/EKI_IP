@@ -10,7 +10,7 @@ You can find each of the subfolders as a use case.
 
 # Use case
 - `Surf_IP2`: surface synthetic example with 1/2 inclusions
-- `Pow`: Pow catchment surface example (from Mejus thesis 2014)
+- `2D_Boxford`: Pow catchment surface example (from Mejus thesis 2014)
 - `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
 
 # Plotting results
