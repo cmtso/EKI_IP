@@ -13,6 +13,10 @@ You can find each of the subfolders as a use case.
 - `Pow`: Pow catchment surface example (from Mejus thesis 2014)
 - `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
 
+# Plotting results
+- You can simply run `plot_tiled.m` to plot the EKI resultant images. Note it will need a recent version of MATLAB. Note dialog boxes will pop up to ask you which vtk file to plot. To plot EKI results, you need to choose `forward_model.vtk`. To plot SCI results, choose `inv/f001_res.vtk`. Then simply choose the variable to plot. 
+- You can use `plot_prior.m` to plot some realizations of the prior model.
+
 # Creating your own use cases
 Follow these steps:
 1. Make sure you can run the problem in cR2 as forward problem (put it in `inv/fwd`). ResIPy is a python package that you may find useful
