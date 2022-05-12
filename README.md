@@ -9,6 +9,7 @@ Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) a
 You can find each of the subfolders as a use case.
 
 # Use case
+Each of these are referred as `<project>` directories below.
 - `Surf_IP2`: surface synthetic example with 1/2 inclusions
 - `2D_Boxford`: Pow catchment surface example (from Mejus thesis 2014)
 - `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
@@ -48,3 +49,4 @@ For DC resisitvity, the values are log-transformed. For IP field, we are working
 - solution converge immediately: most likely data used for synthetic generation is used for inversion. Check whether you are using `protocol.dat` (field data) or `cR2_forward.dat` (synthetic data) in the `get_R2_data()` lines in `EKI.m`
 - Solution not updating and/or only 1 sigma_mean value (instead of 2 or 3). Double in `cR2.in`, `num_region=0` and file path is `resistivity.dat`. Otherwise your updated field is not wirtten!
 - Duouble check `forward_model.dat`. Make sure domain is not cropped in template R2 forward run.
+- Make sure `<project>/protocol.dat` has data and not just survey data (i.e. column 6 and 7 are present). If not, run `cp inv/protocol.dat .` at `<project>`.
