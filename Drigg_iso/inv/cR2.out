@@ -1,0 +1,103 @@
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 26 - 01 - 2022
+
+ >> Drigg                                                                           
+ >> D a t a   w e i g h t s   w i l l   b e  m o d i f i e d <<
+
+    Data weight parameters:
+      Relative error of magnitudes:                       0.030
+      Absolute error of phases (mrad):                    3.000
+      Min. allowable app. resistivity:               -0.500E+05
+      Max. allowable app. resistivity:                0.500E+05
+
+ >> Dirichlet node set to       93
+
+
+ Processing dataset   1
+
+ WARNING:  Rejecting reading 1041(number)       80(P+)  76(P-)       17(C+)  21(C-)      59983.06(App. Resistivity)
+
+ Measurements read:  1364  Measurements rejected:    1
+ NOTE: readings are rejected if the measured apparent resistivity falls outside the specified range
+ Geometric mean of apparent resistivities:  0.12353E+03
+
+ During the inversion measurements may be ignored because their polarity is not consistent
+ with the forward model response. This is quite normal early on in the inversion but 
+ (only for non-surface electrode surveys) the polarity of the forward model can change and
+ these ignored measurements may then be incorporated in subsequent iterations.
+ The number being ignored will be reported each iteration
+
+   Iteration   1
+     Initial RMS Misfit:       28.909    Number of data ignored:    23
+     Alpha:         451.163   RMS Misfit:       12.06  Roughness:      322.151
+     Alpha:         209.411   RMS Misfit:       11.81  Roughness:      343.327
+     Alpha:          97.200   RMS Misfit:       10.34  Roughness:      581.582
+     Alpha:          45.116   RMS Misfit:       10.25  Roughness:      803.951
+     Alpha:          20.941   RMS Misfit:       11.51  Roughness:     1197.695
+     Step length set to    1.00000
+     Final RMS Misfit:       10.25
+     Updated data weights
+
+   Iteration   2
+     Initial RMS Misfit:        9.349    Number of data ignored:    10
+     Alpha:          34.555   RMS Misfit:        4.99  Roughness:      977.929
+     Alpha:          16.039   RMS Misfit:        4.60  Roughness:     1215.098
+     Alpha:           7.445   RMS Misfit:        4.37  Roughness:     1530.069
+     Alpha:           3.456   RMS Misfit:        3.79  Roughness:     2098.326
+     Alpha:           1.604   RMS Misfit:        3.41  Roughness:     2865.810
+     Alpha:           0.744   RMS Misfit:        3.72  Roughness:     3938.518
+     Step length set to    1.00000
+     Final RMS Misfit:        3.41
+     Updated data weights
+
+   Iteration   3
+     Initial RMS Misfit:        3.075    Number of data ignored:     1
+     Alpha:           0.994   RMS Misfit:        1.29  Roughness:     3185.783
+     Alpha:           0.461   RMS Misfit:        1.12  Roughness:     4127.510
+     Alpha:           0.214   RMS Misfit:        1.18  Roughness:     4698.047
+     Step length set to    1.00000
+     Final RMS Misfit:        1.12
+     Attempted to update data weights and caused overshoot
+     treating as converged
+
+ Final phase improvement
+
+   Iteration   1
+     Initial Phase RMS Misfit:        3.501    Number of data ignored:     0
+     Alpha:       36876.858  Phase RMS Misfit:        0.96  Roughness:        0.012
+     Phase RMS Misfit:       0.960
+
+ Solution converged - Outputing results to file
+
+
+ Processing dataset   2
+
+
+
+ End of data:  Terminating
+
+
+     Timing Summary
+     ==============
+     Total time taken:                               1717. s
+
+     Percent time taken forming element equations:     0.1 %
+     Percent time taken solving forward  equations:   42.9 %
+     Percent time taken forming Jacobian:              8.2 %
+     Percent time taken solving inverse equations:    46.5 %
+
+     Timing Details
+     ==============
+     Number of calls to form element equations:        228
+     Average time taken in call:                     0.010 s
+     Number of calls to solve forward equations:     20520
+     Average time taken in call:                     0.036 s
+     Number of calls to form Jacobian:                  48
+     Average time taken in call:                     2.933 s
+     Number of calls to solve inverse equations:        15
+     Average time taken in call:                    53.239 s

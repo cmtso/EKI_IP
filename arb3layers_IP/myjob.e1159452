@@ -1,0 +1,62 @@
+{Error using javaObjectEDT
+Scalar input must be a java object
+
+Error in matlab.ui.internal.dialog.Dialog/getParentFrame (line 46)
+               obj.ParentFrame =
+               javaObjectEDT(com.mathworks.hg.peer.utils.DialogUtilities.createParentWindow);
+               
+Error in matlab.ui.internal.dialog.FileSystemChooser/getParentFrame (line 129)
+                parframe =
+                getParentFrame@matlab.ui.internal.dialog.Dialog(obj);
+
+Error in matlab.ui.internal.dialog.FileChooser/showPeerAndBlockMATLAB (line
+113)
+            parFrame = getParentFrame(obj);
+
+Error in matlab.ui.internal.dialog.FileChooser/show (line 122)
+            obj.showPeerAndBlockMATLAB();
+
+Error in uigetputfile_helper (line 46)
+ufd.show();
+
+Error in uigetfile (line 126)
+[filename, pathname, filterindex] = uigetputfile_helper(0, varargin{:});
+
+Error in read_vtk (line 12)
+[file folder]=uigetfile('*.vtk','Select a *.vtk file -change file types to All
+Types *.*'); %select the file (res.dat file) (both the file name and folder
+will be saved)
+
+Error in EKI (line 160)
+vtk = read_vtk() ;
+
+Error in run (line 91)
+evalin('caller', strcat(script, ';'));
+} 
+Exception in thread "AWT-EventQueue-0" java.awt.HeadlessException
+	at java.awt.GraphicsEnvironment.checkHeadless(GraphicsEnvironment.java:204)
+	at java.awt.Window.<init>(Window.java:536)
+	at java.awt.Frame.<init>(Frame.java:420)
+	at javax.swing.JFrame.<init>(JFrame.java:233)
+	at com.mathworks.mwswing.MJFrame.<init>(MJFrame.java:108)
+	at com.mathworks.mwswing.MJFrame.<init>(MJFrame.java:101)
+	at com.mathworks.hg.peer.utils.DialogUtilities$1.runWithOutput(DialogUtilities.java:58)
+	at com.mathworks.jmi.AWTUtilities$Invoker$2.watchedRun(AWTUtilities.java:475)
+	at com.mathworks.jmi.AWTUtilities$WatchedRunnable.run(AWTUtilities.java:436)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756)
+	at java.awt.EventQueue.access$500(EventQueue.java:97)
+	at java.awt.EventQueue$3.run(EventQueue.java:709)
+	at java.awt.EventQueue$3.run(EventQueue.java:703)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82)
+MATLAB: management.cpp:671: find: Assertion `' failed.
+MATLAB: management.cpp:671: find: Assertion `' failed.
+/opt/sge-8.1.8-1/default/spool/comp17-15/job_scripts/1159452: line 18: 23489 Aborted                 matlab -nodisplay -nosplash -nodesktop -r "run('EKI.m');exit;"

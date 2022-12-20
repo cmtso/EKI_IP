@@ -1,0 +1,2339 @@
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2018 The MathWorks, Inc.
+              R2018a Update 5 (9.4.0.929293) 64-bit (glnxa64)
+                               August 7, 2018
+
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+     6
+
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+DC
+rm: cannot remove 'MC': No such file or directory
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+
+fid =
+
+     3
+
+[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0
+All ok
+[?1l>[?1h=fixme:heap:RtlSetHeapInformation 0x340000 0 0x22fd40 4 stub
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 20 - 04 - 2022
+
+ >> Fine Mesh 63 electrode barrier header: bh4-bh1-bh5                              
+ >> F o r w a r d   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> Reading start resistivity from resistivity.dat               
+
+ Measurements read:  2223  Measurements rejected:    0

@@ -1,0 +1,70 @@
+
+
+ >> cR2  C o m p l e x   R e s i s t i v i t y   I n v e r s i o n  v3.0 <<
+
+ >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
+
+ >> D a t e : 26 - 01 - 2022
+
+ >> Drigg                                                                           
+ >> I n v e r s e   S o l u t i o n   S e l e c t e d <<
+ >> Determining storage needed for finite element conductance matrix
+ >> Generating index array for finite element conductance matrix
+ >> R e g u l a r i s e d   T y p e <<
+ >> D a t a   w e i g h t s   w i l l   b e  m o d i f i e d <<
+
+
+ Processing dataset   1
+
+
+ Measurements read:  1364  Measurements rejected:    1
+ Geometric mean of apparent resistivities:  0.12353E+03
+
+   Iteration   1
+     Initial RMS Misfit:       28.909    Number of data ignored:    23
+     Alpha:         451.163   RMS Misfit:       12.06  Roughness:      322.151
+     Alpha:         209.411   RMS Misfit:       11.81  Roughness:      343.327
+     Alpha:          97.200   RMS Misfit:       10.34  Roughness:      581.582
+     Alpha:          45.116   RMS Misfit:       10.25  Roughness:      803.951
+     Alpha:          20.941   RMS Misfit:       11.51  Roughness:     1197.695
+     Step length set to    1.00000
+     Final RMS Misfit:       10.25
+     Updated data weights
+
+   Iteration   2
+     Initial RMS Misfit:        9.349    Number of data ignored:    10
+     Alpha:          34.555   RMS Misfit:        4.99  Roughness:      977.929
+     Alpha:          16.039   RMS Misfit:        4.60  Roughness:     1215.098
+     Alpha:           7.445   RMS Misfit:        4.37  Roughness:     1530.069
+     Alpha:           3.456   RMS Misfit:        3.79  Roughness:     2098.326
+     Alpha:           1.604   RMS Misfit:        3.41  Roughness:     2865.810
+     Alpha:           0.744   RMS Misfit:        3.72  Roughness:     3938.518
+     Step length set to    1.00000
+     Final RMS Misfit:        3.41
+     Updated data weights
+
+   Iteration   3
+     Initial RMS Misfit:        3.075    Number of data ignored:     1
+     Alpha:           0.994   RMS Misfit:        1.29  Roughness:     3185.783
+     Alpha:           0.461   RMS Misfit:        1.12  Roughness:     4127.510
+     Alpha:           0.214   RMS Misfit:        1.18  Roughness:     4698.047
+     Step length set to    1.00000
+     Final RMS Misfit:        1.12
+     Attempted to update data weights and caused overshoot
+     treating as converged
+
+ Final phase improvement
+
+   Iteration   1
+     Initial Phase RMS Misfit:        3.501    Number of data ignored:     0
+     Alpha:       36876.858  Phase RMS Misfit:        0.96  Roughness:        0.012
+     Phase RMS Misfit:       0.960
+
+ Solution converged - Outputing results to file
+
+
+ Processing dataset   2
+
+
+
+ End of data:  Terminating
