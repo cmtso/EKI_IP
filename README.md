@@ -4,7 +4,7 @@ extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) t
 In particular, we use the above approach first for DC resistivity, then fixed the mean DC resistivity and invert for phase angles only.
 
 # Getting started
-Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the subfolders.
+Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the `<project>` subfolders.
 
 You can find each of the subfolders as a use case.
 
