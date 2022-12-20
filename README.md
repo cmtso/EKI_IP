@@ -10,9 +10,12 @@ You can find each of the subfolders as a use case.
 
 # Use case
 Each of these are referred as `<project>` directories below.
-- `Surf_IP2`: surface synthetic example with 1/2 inclusions
-- `2D_Boxford`: Pow catchment surface example (from Mejus thesis 2014)
-- `PRB`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics)
+- `Surf_IP2`: surface synthetic example with 1/2 inclusions, not used in paper
+- `Surf50m_IP`: surface synthetic example with 1/2 inclusions, a longer survey line than the previous case
+- `2D_Pow`: Pow catchment surface example (from Mejus thesis 2014)
+- `PRB_iso`: 2D cross-borehole for imaging permeable reactive barrier (Slater and Binley 2006 Geophysics), synthetic and field data versions
+- `Drigg_iso`: not used in paper
+- `arb3layers_IP`: 3 layers synthetic model with pinch-out
 
 # Plotting results
 - You can simply run `plot_tiled.m` to plot the EKI resultant images. Note it will need a recent version of MATLAB. Note dialog boxes will pop up to ask you which vtk file to plot. To plot EKI results, you need to choose `forward_model.vtk`. To plot SCI results, choose `inv/f001_res.vtk`. Then simply choose the variable to plot. 
