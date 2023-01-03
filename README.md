@@ -17,9 +17,6 @@ Each of these are referred as `<project>` directories below.
 - `Drigg_iso`: not used in paper
 - `arb3layers_IP`: 3 layers synthetic model with pinch-out
 
-# Plotting results
-- You can simply run `plot_tiled.m` to plot the EKI resultant images. Note it will need a recent version of MATLAB. Note dialog boxes will pop up to ask you which vtk file to plot. To plot EKI results, you need to choose `forward_model.vtk`. To plot SCI results, choose `inv/f001_res.vtk`. Then simply choose the variable to plot. 
-- You can use `plot_prior.m` to plot some realizations of the prior model.
 
 # Creating your own use cases
 Follow these steps:
@@ -30,7 +27,8 @@ Follow these steps:
 
 
 # Major difference from the DC resistivity version:
--
+- Not much! except it uses the code cR2 rather than R2 for forward modelling and SCI
+- Note that in EKI, we first perform a resistvity-only (fixing phase angles as zeros, because they are small) inversion, and then a separate phase angle-only (fixing resistivity as mean from the previous step) inversion (in constrat to a joint resistivity/phase angle inversion in EKI)
 
 
 U size of R2 grid
@@ -47,9 +45,20 @@ U size of R2 grid
 
 For DC resisitvity, the values are log-transformed. For IP field, we are working with negative phase angles, so we add negative sign in `write_R2_sigma.m`
 
+# Plotting results
+- You can simply run `plot_tiled.m` to plot the EKI resultant images. Note it will need a recent version of MATLAB. Note dialog boxes will pop up to ask you which vtk file to plot. To plot EKI results, you need to choose `forward_model.vtk`. To plot SCI results, choose `inv/f001_res.vtk`. Then simply choose the variable to plot. 
+- You can use `plot_prior.m` to plot some realizations of the prior model.
+
+## plotting (update, because I only had MATLAB R2018)
+- The main plotting script is `plot_subplots.m`, which relies on subplots
+- There will be dropdown boxes asking for mesh files for true/SCI/EKI. Note that for the EKI bits, we only care about the mesh and the data is read separately. I think they should be in this order `forward_dat.vtk`, `inv/f001_res.vtk`, `forward_dat.vtk`, `forward_dat.vtk`
+- And then there will be dropdowns for fields to plot in each subplot. You can probably figure out what matches what. Feel free to change the script as you see fit.
+- I was originally using `plot_tiled.m` as my plotting script but I stopped becauses I did not have MATLAB R2019+ at that time. You will probably find it to be easier to use since it supports tiled layout (but you have to adopt it yourself).
+
 
 ## Troubleshoot
 - solution converge immediately: most likely data used for synthetic generation is used for inversion. Check whether you are using `protocol.dat` (field data) or `cR2_forward.dat` (synthetic data) in the `get_R2_data()` lines in `EKI.m`
 - Solution not updating and/or only 1 sigma_mean value (instead of 2 or 3). Double in `cR2.in`, `num_region=0` and file path is `resistivity.dat`. Otherwise your updated field is not wirtten!
 - Duouble check `forward_model.dat`. Make sure domain is not cropped in template R2 forward run.
 - Make sure `<project>/protocol.dat` has data and not just survey data (i.e. column 6 and 7 are present). If not, run `cp inv/protocol.dat .` at `<project>`.
+- Make sure you are in the right  `<project>` directories!
