@@ -4,7 +4,7 @@
 
  >> Author: Andrew Binley, Email [a.binley@lancaster.ac.uk]
 
- >> D a t e : 17 - 05 - 2022
+ >> D a t e : 03 - 01 - 2023
 
  >> My beautiful survey                                                             
  >> Reading start resistivity from res0.dat                      
@@ -63,20 +63,20 @@
 
      Timing Summary
      ==============
-     Total time taken:                                 45. s
+     Total time taken:                                 50. s
 
      Percent time taken forming element equations:     0.3 %
-     Percent time taken solving forward  equations:   65.6 %
-     Percent time taken forming Jacobian:             10.6 %
-     Percent time taken solving inverse equations:    14.5 %
+     Percent time taken solving forward  equations:   69.6 %
+     Percent time taken forming Jacobian:              8.7 %
+     Percent time taken solving inverse equations:    12.1 %
 
      Timing Details
      ==============
      Number of calls to form element equations:         99
      Average time taken in call:                     0.001 s
      Number of calls to solve forward equations:      2376
-     Average time taken in call:                     0.013 s
+     Average time taken in call:                     0.015 s
      Number of calls to form Jacobian:                  33
-     Average time taken in call:                     0.146 s
+     Average time taken in call:                     0.133 s
      Number of calls to solve inverse equations:         4
-     Average time taken in call:                     1.647 s
+     Average time taken in call:                     1.525 s
