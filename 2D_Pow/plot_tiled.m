@@ -16,6 +16,7 @@
 % xticklabels(ax1,{})
 % t.TileSpacing = 'compact';
 
+% note below divide by 300 realizations 
 
 %%
 tchart = tiledlayout(5,2); % Requires R2019b or later
@@ -68,8 +69,8 @@ cells_123 = find(any(zones' ==1)' & any(zones' ==2)'& any(zones' ==3)');
 
 vtk = read_vtk() ; 
 vtk.scalar_data = [vtk.scalar_data log10(1./sigma_mean) ...
-    sum(zones'==2)'./300 sigma_std' sigma_std'./log10(1./sigma_mean)] ;
-add_list = {"mean log_1_0 resistivity","Zone 2 probability",...
+    sum(zones'==1)'./300 sum(zones'==2)'./300 sum(zones'==3)'./300 sigma_std' sigma_std'./log10(1./sigma_mean)] ;
+add_list = {"mean log_1_0 resistivity","Zone 1 probability","Zone 2 probability","Zone 3 probability",...
     "std(log_1_0 resistivity)", "CV(log_1_0 resistivity)"} ;
 vtk.scalar_list(end+1:end+numel(add_list)) = add_list; 
 
@@ -87,8 +88,8 @@ for i = 1:size(sigma,1)
     sigma_std(i) = std((sigma(i,:)))';
 end
 vtk.scalar_data = [vtk.scalar_data (sigma_mean) ...
-    sum(zones'==2)'./300 sigma_std' sigma_std'./(sigma_mean)] ;
-add_list = {"mean phase (mrad)","Zone 2 probability_phase", ...
+    sum(zones'==1)'./300 sum(zones'==2)'./300  sum(zones'==3)'./300  sigma_std' sigma_std'./(sigma_mean)] ;
+add_list = {"mean phase (mrad)","Zone 1 probability_phase","Zone 2 probability_phase","Zone 3 probability_phase", ...
     "std(phase)", "CV(phase)"} ;
 vtk.scalar_list(end+1:end+numel(add_list)) = add_list; 
 
@@ -163,7 +164,70 @@ rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.po
 title('EKI: CV of phase (mrad)')
 
 
+%% zone membership 1-3
+figure
+tchart = tiledlayout(3,2); % Requires R2019b or later
+xlabel(tchart,'$X [\mathrm{m}]$','Interpreter','latex','FontSize',16)
+ylabel(tchart,'$Z [\mathrm{m}]$','Interpreter','latex','FontSize',16)
+% Move plots closer together
+tchart.TileSpacing = 'compact';
+tchart.Padding = 'compact';
+
+ax = nexttile; cla;
+plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+caxis([0 1])
+title('EKI: zone 1 probability (resistivity)')
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+
+
+ax = nexttile;
+cla
+plot_vtk_2D() 
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+title('EKI: zone 1 probability (phase)')
+caxis([0 1])
+
+ax = nexttile; cla;
+plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+caxis([0 1])
+title('EKI: zone 2 probability (resistivity)')
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+
+
+ax = nexttile;
+cla
+plot_vtk_2D() 
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+title('EKI: zone 2 probability (phase)')
+caxis([0 1])
+
+ax = nexttile; cla;
+plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+caxis([0 1])
+title('EKI: zone 3 probability (resistivity)')
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+
+
+ax = nexttile;
+cla
+plot_vtk_2D() 
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+title('EKI: zone 3 probability (phase)')
+caxis([0 1])
 %%
+
 
 %% misfit
 figure
