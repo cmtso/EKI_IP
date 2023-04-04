@@ -4,7 +4,7 @@ extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) t
 In particular, we use the above approach first for DC resistivity, then fixed the mean DC resistivity and invert for phase angles only.
 
 # Getting started
-Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the `<project>` subfolders.
+Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the `<project>` subfolders. You will need to install Wine to run it in a Linux-like system.
 
 You can find each of the subfolders as a use case.
 
@@ -62,3 +62,5 @@ For DC resisitvity, the values are log-transformed. For IP field, we are working
 - Duouble check `forward_model.dat`. Make sure domain is not cropped in template R2 forward run.
 - Make sure `<project>/protocol.dat` has data and not just survey data (i.e. column 6 and 7 are present). If not, run `cp inv/protocol.dat .` at `<project>`.
 - Make sure you are in the right  `<project>` directories!
+- The line `system('wine64 ../../cR2.exe');` in `Tools/Inversion.m` may need to change to `system('wine ../../cR2.exe');` depending on your wine version.
+- The codes are developed for Linux/Mac desktops or HPC (see `myjob.com` for an example job submission script. Modify the MATLAB script accordingly to run on Windows (and you won't need Wine to run cR2.exe if you do so).
