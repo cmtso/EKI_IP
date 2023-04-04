@@ -35,6 +35,7 @@ k_true = (a_mean)+b_mean*sigma0_true-c_mean*sigma2_true + constant; %log10
 vtk = read_vtk();
 elec = dlmread('electrodes.dat');
 vtk.polyline = dlmread(fullfile(vtk.folder, 'polyline.txt'));
+xlim2 = [0 47]; ylim2 = [-15.6 0];
 
 sigma0 = load('Results_DC.mat','sigma'); sigma0 = sigma0.sigma; % keep as S/m
 phase = load('Results_IP.mat','sigma'); phase = phase.sigma; % change iter # if needed
@@ -131,6 +132,8 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 caxis ([min(k_true),max(k_true)])
 caxis([-10 -7])
+xlim(xlim2);ylim(ylim2);
+rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 subplot(412)
 vtk.scalar_list(end+1) = {'mean log_1_0 k (m^2)'}; 
@@ -141,6 +144,8 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 caxis ([min(k_mean),max(k_mean)])
 caxis([-10 -7])
+xlim(xlim2);ylim(ylim2);
+rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 %% std(log10 K)
 a_var = 1.01 ^2;
@@ -183,6 +188,8 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 %caxis([0 0.045])
 ylabel('$Y [\mathrm{m}]$','Interpreter','latex','FontSize',16)
 axis equal
+xlim(xlim2);ylim(ylim2);
+rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 subplot(414)
 plot_vtk_2D()
@@ -190,6 +197,9 @@ plot_vtk_2D()
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 xlabel('$X [\mathrm{m}]$','Interpreter','latex','FontSize',16)
 axis equal
+xlim(xlim2);ylim(ylim2);
+rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+
 %%
 figure
 vtk.scalar_list(end+1:end+5) = {'a component','b component','c component',...
@@ -202,6 +212,9 @@ for ii = 1:5
     %set(gca,'ColorScale','log')
     hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
     caxis([0 inf])
+    xlim(xlim2);ylim(ylim2);
+    rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+
 end
 xlabel('$X [\mathrm{m}]$','Interpreter','latex','FontSize',16)
 
