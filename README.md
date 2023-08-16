@@ -6,7 +6,7 @@ In particular, we use the above approach first for DC resistivity, then fixed th
 # Getting started
 Download cR2 [here](http://www.es.lancs.ac.uk/people/amb/Freeware/cR2/cR2.htm) and put **cR2.exe** in each of the `<project>` subfolders. You will need to install Wine to run it in a Linux-like system.
 
-You can find each of the subfolders as a use case.
+You can find each of the subfolders as a self-contained use case.
 
 # Use case
 Each of these are referred as `<project>` directories below.
@@ -17,6 +17,21 @@ Each of these are referred as `<project>` directories below.
 - `Drigg_iso`: not used in paper
 - `arb3layers_IP`: 3 layers synthetic model with pinch-out
 
+Order of appearance in Paper: 
+| Figure # | folder                       |
+| -------- | ---------------------------- |
+| 2        | `surf50m_IP`                 |
+| 3        | `arb3layers_IP`              |
+| 4        | `LS2_arb3layers_IP`          |
+| 5        | `LS4_arb3layers_IP_separate` |
+| 6        | `LS2_arb3layers_uniform`     |
+| 7        | `LS4_arb3layers_IP`          |
+| 9        | `2D_Pow_HEC`                 |
+| 10       | `PRBsyn_iso`                 |
+| 11       | `PRB_iso`                    |
+| 12       | `PRBnoise_syn_iso`           |
+
+All examples uses an ensemble size of 300 samples, with the exception of 2D_Pow (100).
 
 # Creating your own use cases
 Follow these steps:
