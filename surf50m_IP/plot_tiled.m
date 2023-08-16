@@ -18,7 +18,7 @@
 
 
 %%
-tchart = tiledlayout(5,2); % Requires R2019b or later
+tchart = tiledlayout(6,2); % Requires R2019b or later
 xlabel(tchart,'$X [\mathrm{m}]$','Interpreter','latex','FontSize',16)
 ylabel(tchart,'$Z [\mathrm{m}]$','Interpreter','latex','FontSize',16)
 % Move plots closer together
@@ -29,48 +29,72 @@ elec = dlmread("electrodes.dat");
 sigma_clim = [1. 2.];
 mrad_clim = [-20 0];
 
-%%% part1: read SCI first
-clear vtk
+%% part1: read true first
+clear vtk 
 vtk = read_vtk() ; % choose f001_res_SCI.vtk
-
+vtk.polyline = dlmread(fullfile(vtk.folder, 'polyline.txt'));
 ax = nexttile(1);
-vtk.scalar_list(end+1) = {'SCI: log10 resistivity in \Omegam'}; 
-vtk.scalar_data = [vtk.scalar_data log10(vtk.scalar_data(:,1))] ;
-plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+plot_vtk_str = 'Magnitude(log10)';plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-title('SCI: log10 resistivity in \Omegam')
+title({'True:',' log10 resistivity in \Omegam'})
 caxis(sigma_clim)
-
+xlim([0 47]), box off
 
 
 ax = nexttile(2);
-plot_vtk_2D() 
+plot_vtk_str = 'Phase(mrad)'; plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-title('SCI: phase (mrad)')
+title('True: phase (mrad)')
 caxis(mrad_clim)
+xlim([0 47]), box off
+
+
+%% part1: read SCI first
+%% read smooth
+clear vtk
+vtk = read_vtk() ; % choose f001_res_SCI.vtk
+vtk.scalar_list(end+1:end+2) = {'SCI: log10 resistivity in \Omegam', 'SCI: Phase(mrad)'}; 
+vtk.scalar_data = [vtk.scalar_data log10(vtk.scalar_data(:,1)) vtk.scalar_data(:,2)] ;
+ ax = nexttile(3);
+plot_vtk_str='SCI: log10 resistivity in \Omegam'; plot_vtk_2D()  
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+title({'SCI (smooth):',' log10 resistivity in \Omegam'})
+caxis(sigma_clim)
+xlim([0 47]), ylim([-15.67 0 ]), box(ax,'off')
+
+
+ax = nexttile(4);
+plot_vtk_str = 'SCI: Phase(mrad)'; plot_vtk_2D() 
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+title({'SCI(smooth): ','phase (mrad)'})
+caxis(mrad_clim)
+xlim([0 47]), ylim([-15.67 0]) ,box(ax,'off')
 
 %%% part 2a: read_vtk from forward model then add other vtk.
-
 clear vtk
+vtk = read_vtk() ;vtk.polyline = dlmread(fullfile(vtk.folder, 'polyline.txt'));
 
 load('Results_DC.mat') % change iter # if needed
-clear sigma_zone
+N_En=size(sigma,2);  %ensemble size
+clear sigma_zone zones
 
 for i = 1:size(sigma,2)
-    sigma_zone(:,i) = unique(sigma(:,i))' ;
-    [~,~,zones(:,i)] = unique(sigma(:,i)) ;
+    sigma_zone(:,i) = uniquetol(sigma(:,i))' ;
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
 end
 for i = 1:size(sigma,1)
     sigma_std(i) = std(log10(1./sigma(i,:)))';
+    sigma_mean2(i) = mean(log10(1./sigma(i,:)));
 end
 cells_123 = find(any(zones' ==1)' & any(zones' ==2)'& any(zones' ==3)');
 
-vtk = read_vtk() ; 
-vtk.scalar_data = [vtk.scalar_data log10(1./sigma_mean) ...
-    sum(zones'==2)'./300 sigma_std' sigma_std'./log10(1./sigma_mean)] ;
-add_list = {"mean log_1_0 resistivity","Zone 2 probability",...
+vtk.scalar_data = [vtk.scalar_data log10(1./sigma_mean) sigma_mean2'...
+    sum(zones'==2)'./N_En sigma_std' sigma_std'./sigma_mean2'] ;
+add_list = {"LS mean log_1_0 resistivity","mean log_1_0 resistivity","Zone 2 probability",...
     "std(log_1_0 resistivity)", "CV(log_1_0 resistivity)"} ;
 vtk.scalar_list(end+1:end+numel(add_list)) = add_list; 
 
@@ -82,102 +106,271 @@ clear sigma_zone
 %%% also for IP
 load('Results_IP.mat')
 for i = 1:size(sigma,2)
-    sigma_zone(:,i) = unique(sigma(:,i))' ;
-    [~,~,zones(:,i)] = unique(sigma(:,i)) ;
+    sigma_zone(:,i) = uniquetol(sigma(:,i))' ;
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
 end
 for i = 1:size(sigma,1)
     sigma_std(i) = std((sigma(i,:)))';
+    sigma_mean2(i) = mean((sigma(i,:)));
 end
-vtk.scalar_data = [vtk.scalar_data (sigma_mean) ...
-    sum(zones'==2)'./300 sigma_std' sigma_std'./(sigma_mean)] ;
-add_list = {"mean phase (mrad)","Zone 2 probability_phase", ...
+vtk.scalar_data = [vtk.scalar_data (sigma_mean) sigma_mean2' ...
+    sum(zones'==2)'./N_En sigma_std' sigma_std'./(sigma_mean2')] ;
+add_list = {"LS mean phase (mrad)","mean phase (mrad)","Zone 2 probability_phase", ...
     "std(phase)", "CV(phase)"} ;
 vtk.scalar_list(end+1:end+numel(add_list)) = add_list; 
 
 %%% Part 2b: plot EKI plots
-
-ax = nexttile;
-plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+ax = nexttile(5);
+plot_vtk_str = 'mean log_1_0 resistivity'; plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
 caxis(sigma_clim)
-title('EKI: mean log10 resistivity in \Omegam')
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-
-
-ax = nexttile(4);
-cla
-plot_vtk_2D() 
-hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
-axis equal
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-title('EKI: mean phase (mrad)')
-caxis(mrad_clim)
-
-ax = nexttile; cla;
-plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
-hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
-axis equal
-caxis([0 1])
-title('EKI: zone 2 probability (resistivity)')
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+title({'EKI: mean log10 ','resistivity in \Omegam'})
 
 
 ax = nexttile(6);
 cla
-plot_vtk_2D() 
+plot_vtk_str = 'mean phase (mrad)'; plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-title('EKI: zone 2 probability (phase)')
-caxis([0 1])
+title({'EKI: mean ','phase (mrad)'})
+caxis(mrad_clim)
 
-ax = nexttile(7); cla;
-plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+
+ax = nexttile(7);
+plot_vtk_str = 'LS mean log_1_0 resistivity'; plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-title('EKI: STD of log10 resistivity in \Omegam')
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+caxis(sigma_clim)
+title({'EKI: log10 resistivity in \Omegam',' from mean level sets'})
 
 
 ax = nexttile(8);
 cla
-plot_vtk_2D() 
+plot_vtk_str = 'LS mean phase (mrad)'; plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-title('EKI: STD of phase (mrad)')
+title({'EKI: phase (mrad) from',' mean level sets'})
+caxis(mrad_clim)
 
-ax = nexttile(9); cla;
-plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+
+ax = nexttile(9);
+plot_vtk_str = 'Zone 2 probability'; plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-title('EKI: CV of log10 resistivity in \Omegam')
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-
+caxis([0 1])
+title({'EKI: zone 2 ','probability (resistivity)'})
 
 ax = nexttile(10);
 cla
-plot_vtk_2D() 
+plot_vtk_str = 'Zone 2 probability_phase'; plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-title('EKI: CV of phase (mrad)')
+title({'EKI: zone 2 ','probability (phase)'})
+caxis([0 1])
 
-for i = 1:10
+ax = nexttile(11);
+plot_vtk_str = 'std(log_1_0 resistivity)'; plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+title({'EKI: STD of',' log10 resistivity in \Omegam'})
+
+
+ax = nexttile(12);
+cla
+plot_vtk_str = 'std(phase)'; plot_vtk_2D() 
+hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+axis equal
+title({'EKI: STD of ','phase (mrad)'})
+
+for i = 1:12
     ax=nexttile(i)
-    rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-    ylim([-3.8333 0])
+    rectangle('Position',[0 -14.9 46 14.9],'LineStyle','-','LineWidth',0.5)
+    xlim([0 46]), ylim ([-14.9 0])
 end
-%%
+
+set(findall(gcf,'-property','FontSize'),'FontSize',11)
+set(gcf,'color','w');
+ax = gcf;
+%set(ax,'visible','off')
+set(ax,'Position',[2 33 1920/2 1092])
+exportgraphics(ax,'img/tiled_R1.eps')
+exportgraphics(ax,'img/tiled_R1.png')
+
+%%% Jaccard similarity index of true and estimated zones
+idx = find(string(vtk.scalar_list) == 'Magnitude(log10)');
+[~,~, zonesA] = uniquetol(vtk.scalar_data(:,idx)) ; 
+idx = find(string(vtk.scalar_list) == 'LS mean log_1_0 resistivity');
+[~,~, zonesB] = uniquetol(vtk.scalar_data(:,idx)) ;
+%zonesA(zonesA==3)=2; zonesB(zonesB==3)=2; 
+%zonesB(zonesB==3)=1; zonesB(zonesB==2)=1;zonesB(zonesB==4)=3;
+zonesA = zonesA(within==1); zonesB = zonesB(within==1);
+sum(zonesA == zonesB)/sum(zonesA | zonesB) % Jaccard: intersection over union
+
+idx = find(string(vtk.scalar_list) == 'Phase(mrad)');
+[~,~, zonesA] = uniquetol(vtk.scalar_data(:,idx)) ;
+idx = find(string(vtk.scalar_list) == 'LS mean phase (mrad)');
+[~,~, zonesB] = uniquetol(vtk.scalar_data(:,idx)) ;
+zonesA = zonesA(within==1); zonesB = zonesB(within==1);
+sum(zonesA == zonesB)/sum(zonesA | zonesB)
+
+%% prior and posterior samples and histogram
+% prior histogram
+
+load('Prior_DC.mat')
+for i = 1:size(sigma,2)
+    sigma_zone(:,i) = uniquetol(sigma(:,i))' ;
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
+end
+
+subplot(221)
+hist(log10(1./sigma_zone'), 500,'facecolor',{'r','b'}), title('Prior')
+legend('Zone 1', 'Zone 2')
+xlabel('log_1_0 resistivity in \Omegam')
+ylabel('count'), xlim([-1 3])
+legend('boxoff')
+
+clear sigma_zone zones
+load('Prior_IP.mat')
+for i = 1:size(sigma,2)
+    temp = uniquetol(sigma(:,i))' ;
+    if length(temp) == 3
+        sigma_zone(:,i) = temp;
+    else 
+        sigma_zone(:,i) = [temp NaN];
+    end
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
+end
+subplot(223)
+hist((sigma_zone'), 500), title('Prior')
+legend('Zone 1', 'Zone 2', 'Zone 3')
+xlabel('Phase angle in mrad')
+ylabel('count'), %xlim(mrad_clim)
+legend('boxoff')
+
+
+% posterior histogram
+clear sigma_zone zones
+load('Results_DC.mat')
+for i = 1:size(sigma,2)
+    sigma_zone(:,i) = uniquetol(sigma(:,i))' ;
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
+end
+
+subplot(222)
+hist(log10(1./sigma_zone'), 500), title('Posterior')
+legend('Zone 1', 'Zone 2')
+xlabel('log_1_0 resistivity in \Omegam')
+ylabel('count'), %xlim(sigma_clim)
+legend('boxoff')
+
+clear sigma_zone zones
+load('Results_IP.mat')
+for i = 1:size(sigma,2)
+    sigma_zone(:,i) = uniquetol(sigma(:,i))' ;
+    [~,~,zones(:,i)] = uniquetol(sigma(:,i)) ;
+end
+subplot(224)
+hist((sigma_zone'), 500), title('Posterior')
+legend('Zone 1', 'Zone 2', 'Zone 3')
+xlabel('Phase angle in mrad')
+ylabel('count'), %xlim(mrad_clim)
+legend('boxoff')
+
+
+
+%% prior and posterior realizations
+elec = dlmread("electrodes.dat"); 
+sigma_clim = [-1. 2.5];
+mrad_clim = [-20 0];
+
+clear vtk
+sample_i = [3 30 50 60 145];
+vtk = read_vtk() ; % choose f001_res_SCI.vtk
+vtk.polyline = dlmread(fullfile(vtk.folder, 'polyline.txt'));
+figure
+% DC
+load('Prior_DC.mat')
+for iii = 1:5
+    %subplot(5,1,iii);
+    subplot(5,4,1+4*(iii-1))
+    vtk.scalar_list(end+1) = {num2str(sample_i(iii))}; 
+    vtk.scalar_data = [vtk.scalar_data log10(1./sigma(:,sample_i(iii)))] ; % resistivity
+    plot_vtk_str= num2str(sample_i(iii)); plot_vtk_2D(); %pre-select varaible  
+    hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+    axis equal
+    title(sprintf('Prior resistivity: #%d', sample_i(iii)))
+    caxis(sigma_clim)
+end
+
+load('Results_DC.mat') % posterior
+for iii = 1:5
+    %subplot(5,1,iii);
+    subplot(5,4,2+4*(iii-1))
+    vtk.scalar_list(end+1) = {num2str(sample_i(iii))}; 
+    vtk.scalar_data = [vtk.scalar_data log10(1./sigma(:,sample_i(iii)))] ; % resistivity
+    plot_vtk_str= num2str(sample_i(iii)); plot_vtk_2D(); %pre-select varaible  
+    hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+    axis equal
+    title(sprintf('Posterior resistivity: #%d', sample_i(iii)))
+    caxis(sigma_clim)
+end
+set(findall(gcf,'-property','FontSize'),'FontSize',11)
+set(gcf,'color','w')
+
+%IP
+%figure
+load('Prior_IP.mat')
+for iii = 1:5
+    %subplot(5,1,iii);
+    subplot(5,4,3+4*(iii-1))
+    vtk.scalar_list(end+1) = {num2str(sample_i(iii))}; 
+    vtk.scalar_data = [vtk.scalar_data (sigma(:,sample_i(iii)))] ; % phase
+    plot_vtk_str= num2str(sample_i(iii)); plot_vtk_2D(); %pre-select varaible  
+    hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+    axis equal
+    title(sprintf('Prior phase angle: #%d', sample_i(iii)))
+    caxis(mrad_clim)
+end
+
+load('Results_IP.mat') % posterior
+for iii = 1:5
+    %subplot(5,1,iii);
+    subplot(5,4,4*iii)
+    vtk.scalar_list(end+1) = {num2str(sample_i(iii))}; 
+    vtk.scalar_data = [vtk.scalar_data (sigma(:,sample_i(iii)))] ; % phase
+    plot_vtk_str= num2str(sample_i(iii)); plot_vtk_2D(); %pre-select varaible  
+    hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
+    axis equal
+    title(sprintf('Posterior phase angle: #%d', sample_i(iii)))
+    caxis(mrad_clim)
+end
+set(findall(gcf,'-property','FontSize'),'FontSize',11)
+set(gcf,'color','w');
+%set(gcf,'Position', [499 215 2336 491]); % top half
+%set(gcf,'Position', [499 32 958 1083]); % left half of screen
+set(gcf,'Position', [1 1 1920 1092]); % left half of screen
+
+pos = get(gcf, 'Position')
+
+for i = 1:20
+    subplot(5,4,i)
+    ylim([-15.25 0]), xlim([0 48])
+end
+exportgraphics(gcf,'img/samples_R1.eps')
+exportgraphics(gcf,'img/samples_R1.png')
 
 %% misfit
+
 figure
 load('Results_DC.mat')
-semilogy(Misfit./300,"LineWidth",2)
+load('Data_DC.mat')
+N_En=size(sigma,2);  %ensemble size
+semilogy(Misfit./length(Data.data),"LineWidth",2)
 hold on
 load('Results_IP.mat')
-semilogy(Misfit./300,'LineWidth',2)
-ylabel('Un-normalized misfit')
+semilogy(Misfit./length(Data.data),'LineWidth',2)
+ylabel('Misfit')
 xlabel('Iteration')
 legend('ERT inversion','IP inversion')
+lengend('boxoff')

@@ -28,7 +28,6 @@ mrad_clim = [-20 0];
 clear vtk
 vtk = read_vtk() ; % choose f001_res_SCI.vtk
 vtk.polyline = dlmread(fullfile(vtk.folder, 'polyline.txt'));
-xlim2 = [0 47]; ylim2 = [-15.6 0];
 
 subplot(521);
 plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttile;
@@ -36,8 +35,6 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 title('True: log10 resistivity in \Omegam')
 caxis(sigma_clim)
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 
 
@@ -47,8 +44,6 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 title('True: phase (mrad)')
 caxis(mrad_clim)
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 %% part2read SCI
 subplot(523);
@@ -62,8 +57,6 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 title('SCI: log10 resistivity in \Omegam')
 caxis(sigma_clim)
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 
 
@@ -73,8 +66,6 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 title('SCI: phase (mrad)')
 caxis(mrad_clim)
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
 
 %%% part 2a: read_vtk from forward model then add other vtk.
 
@@ -127,8 +118,7 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 caxis(sigma_clim)
 title('EKI: mean log10 resistivity in \Omegam')
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 
 
 subplot(5,2,6);
@@ -136,8 +126,7 @@ cla
 plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 title('EKI: mean phase (mrad)')
 caxis(mrad_clim)
 
@@ -147,8 +136,7 @@ hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); ho
 axis equal
 caxis([0 1])
 title('EKI: zone 2 probability (resistivity)')
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 
 
 subplot(5,2,8);
@@ -156,8 +144,7 @@ cla
 plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 title('EKI: zone 2 probability (phase)')
 caxis([0 1])
 
@@ -166,8 +153,7 @@ plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttil
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
 title('EKI: STD of log10 resistivity in \Omegam')
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 
 
 subplot(5,2,10);
@@ -175,8 +161,7 @@ cla
 plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 title('EKI: STD of phase (mrad)')
 
 
@@ -187,8 +172,7 @@ plot_vtk_2D()  % will show drop down menu to let you selct variableax2 = nexttil
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
 title('EKI: CV of log10 resistivity in \Omegam')
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 
 
 ax = nexttile(10);
@@ -196,15 +180,14 @@ cla
 plot_vtk_2D() 
 hold on; plot(elec(:,1),elec(:,2),'ko','Markersize',2,'MarkerFaceColor','k'); hold off;
 axis equal
-xlim(xlim2);ylim(ylim2);
-rectangle('Position',[xlim2(1) ylim2(1) range(xlim2) range(ylim2)],'LineStyle','-','LineWidth',0.5)
+rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
 title('EKI: CV of phase (mrad)')
 
-% for i = 1:10
-%     ax=nexttile(i)
-%     rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
-%     ylim([-3.8333 0])
-% end
+for i = 1:10
+    ax=nexttile(i)
+    rectangle('Position',[min(vtk.polyline(:,1)) min(vtk.polyline(:,2)) range(vtk.polyline(:,1)) range(vtk.polyline(:,2))],'LineStyle','-','LineWidth',0.5)
+    ylim([-3.8333 0])
+end
 %%
 
 %% misfit

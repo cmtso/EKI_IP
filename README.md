@@ -1,6 +1,8 @@
 # EKI_IP
 extending [EKI_geophysics_2020](https://github.com/cmtso/EKI_geophysics_2020/) to induced polarization. Prepared for paper submission.
 
+Tso, C.-H.M., M. Iglesias, A.Binley (2023) Ensemble Kalman Inversion of Induced Polarization Data. Geophysical Journal International
+
 In particular, we use the above approach first for DC resistivity, then fixed the mean DC resistivity and invert for phase angles only.
 
 # Getting started

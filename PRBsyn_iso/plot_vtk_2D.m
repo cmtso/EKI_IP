@@ -2,7 +2,6 @@
 % https://uk.mathworks.com/help/matlab/ref/patch.html
 
 % need to implement polyline crop
-% added 250322: if vtk_ii exsit, no dropdown selection
 
 % in the future:
 % if I want a smoother value, interp c to nodes and make vtk.c nodal
@@ -14,6 +13,8 @@
 
 %figure
 %figure('units','points','position',[0,0,808,140])
+
+%fprintf('Using plot_vtk_2D.m. Make sure the variable ii is empty.\n')
 
 for i=1:size(vtk.cells,1)
     mesh1 = (vtk.cells(i,1)) ;
@@ -47,11 +48,11 @@ if (isfield(vtk,'polyline'))
 end
 
 
-%%
-if exist('vtk_ii','var')
-    ii = vtk_ii;
-    fprintf('vtk_ii exist: No dropdown selection.\n')
-else
+%% use dropdown selection if selection string does not exist
+if (exist('plot_vtk_str','var'))
+    ii = find(strcmp(string(vtk.scalar_list), plot_vtk_str),1,'last'); % e.g. plot_vtk_str = 'Phase(mrad)'
+end
+if (isempty(ii))
     ii =  listdlg('ListString', vtk.scalar_list,'selectionMode','single');
 end
 

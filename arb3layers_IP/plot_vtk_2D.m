@@ -14,6 +14,8 @@
 %figure
 %figure('units','points','position',[0,0,808,140])
 
+%fprintf('Using plot_vtk_2D.m. Make sure the variable ii is empty.\n')
+
 for i=1:size(vtk.cells,1)
     mesh1 = (vtk.cells(i,1)) ;
     mesh2 = (vtk.cells(i,2)) ;
@@ -46,9 +48,13 @@ if (isfield(vtk,'polyline'))
 end
 
 
-%%
-
-ii =  listdlg('ListString', vtk.scalar_list,'selectionMode','single');
+%% use dropdown selection if selection string does not exist
+if (exist('plot_vtk_str','var'))
+    ii = find(strcmp(string(vtk.scalar_list), plot_vtk_str),1,'last'); % e.g. plot_vtk_str = 'Phase(mrad)'
+end
+if (isempty(ii))
+    ii =  listdlg('ListString', vtk.scalar_list,'selectionMode','single');
+end
 
 vtk.c = vtk.scalar_data(:,ii);
 if (isfield(vtk,'polyline'))
