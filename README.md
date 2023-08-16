@@ -19,6 +19,8 @@ Each of these are referred as `<project>` directories below.
 - `Drigg_iso`: not used in paper
 - `arb3layers_IP`: 3 layers synthetic model with pinch-out
 
+See more detailed description of each case in the paper. Note some cases have not been included in the paper.
+
 Order of appearance in Paper: 
 | Figure # | folder                       |
 | -------- | ---------------------------- |
@@ -33,7 +35,11 @@ Order of appearance in Paper:
 | 11       | `PRB_iso`                    |
 | 12       | `PRBnoise_syn_iso`           |
 
+Unlike the others, Fig. 6 and 7 uses a non-informative prior distribution (i.e. prior ranges of zones overlap).
+
 All examples uses an ensemble size of 300 samples, with the exception of 2D_Pow (100).
+
+All use cases uses 1 level-set function to estimate 2 or 3 zones, unless otherwise specified. `LS2*` uses two level sets function for the 3 zone problem, while `LS4` estimates four zones.
 
 # Creating your own use cases
 Follow these steps:
